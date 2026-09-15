@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>海輪ツーリスト｜旅をもっと身近に、もっと自由に。</title>
+
+<meta name="description" content="海輪ツーリストは、国内旅行・団体旅行・家族旅行を中心に、お客様の思い出に残る旅をご提案する旅行会社です。">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        "Meiryo",
+        sans-serif;
+    color: #24323d;
+    background: #ffffff;
+    line-height: 1.8;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+/* Header */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.96);
+    border-bottom: 1px solid #e7ecef;
+}
+
+.header-inner {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.logo span {
+    color: #1686a5;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    font-size: 14px;
+}
+
+nav a {
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: #1686a5;
+}
+
+/* Hero */
+
+.hero {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.96) 0%,
+            rgba(255,255,255,0.86) 45%,
+            rgba(255,255,255,0.15) 100%
+        ),
+        linear-gradient(135deg,#d9f2f6,#f7fbfc);
+}
+
+.hero-content {
+    max-width: 620px;
+    padding: 80px 0;
+}
+
+.hero small {
+    color: #1686a5;
+    font-weight: bold;
+    letter-spacing: 0.18em;
+}
+
+.hero h1 {
+    font-size: clamp(36px,6vw,64px);
+    line-height: 1.25;
+    margin: 18px 0;
+    letter-spacing: 0.04em;
+}
+
+.hero p {
+    font-size: 17px;
+    color: #52616b;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 30px;
+    border-radius: 30px;
+    background: #1686a5;
+    color: white;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #106b84;
+    transform: translateY(-2px);
+}
+
+/* Section */
+
+section {
+    padding: 90px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title small {
+    color: #1686a5;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    margin: 8px 0;
+}
+
+/* Cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.card {
+    border: 1px solid #e5eaed;
+    border-radius: 15px;
+    padding: 30px;
+    background: white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    margin-top: 5px;
+}
+
+/* About */
+
+.about {
+    background: #f5fafb;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-box {
+    background: white;
+    border-radius: 15px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+/* News */
+
+.news-list {
+    max-width: 850px;
+    margin: auto;
+}
+
+.news-item {
+    display: flex;
+    gap: 25px;
+    padding: 18px 0;
+    border-bottom: 1px solid #e5eaed;
+}
+
+.news-date {
+    color: #1686a5;
+    font-weight: bold;
+    min-width: 110px;
+}
+
+/* Company */
+
+.company {
+    background: #f8fafb;
+}
+
+.company-table {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+    border-collapse: collapse;
+    background: white;
+}
+
+.company-table th,
+.company-table td {
+    padding: 18px 20px;
+    border-bottom: 1px solid #e5eaed;
+    text-align: left;
+}
+
+.company-table th {
+    width: 28%;
+    background: #f2f7f8;
+}
+
+/* Contact */
+
+.contact {
+    text-align: center;
+}
+
+.contact-box {
+    max-width: 700px;
+    margin: auto;
+    padding: 50px 30px;
+    background: linear-gradient(135deg,#e5f6fa,#f8fcfd);
+    border-radius: 20px;
+}
+
+.contact-note {
+    font-size: 13px;
+    color: #71808a;
+    margin-top: 20px;
+}
+
+/* Footer */
+
+footer {
+    background: #1f3138;
+    color: white;
+    padding: 45px 0 25px;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-logo {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.footer-text {
+    font-size: 13px;
+    color: #c7d1d5;
+}
+
+.copyright {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    text-align: center;
+    font-size: 12px;
+    color: #aebbc0;
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        min-height: 520px;
+        background:
+            linear-gradient(
+                rgba(255,255,255,0.88),
+                rgba(255,255,255,0.94)
+            ),
+            linear-gradient(135deg,#d9f2f6,#f7fbfc);
+    }
+
+    .hero-content {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    section {
+        padding: 65px 0;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+
+    .news-item {
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .company-table th {
+        width: 35%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container header-inner">
+
+<div class="logo">
+<span>海輪</span>ツーリスト
+</div>
+
+<nav>
+<a href="#concept">私たちについて</a>
+<a href="#service">サービス</a>
+<a href="#news">お知らせ</a>
+<a href="#company">会社概要</a>
+<a href="#contact">お問い合わせ</a>
+</nav>
+
+</div>
+</header>
+
+
+<main>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<small>KAIRIN TOURIST</small>
+
+<h1>
+旅をもっと身近に、<br>
+もっと自由に。
+</h1>
+
+<p>
+旅先で出会う景色、食べ物、人。<br>
+そのひとつひとつが、人生の思い出になる。<br>
+海輪ツーリストは、そんな「心に残る旅」をお届けします。
+</p>
+
+<a href="#service" class="btn">
+旅行サービスを見る
+</a>
+
+</div>
+
+</section>
+
+
+<!-- Concept -->
+
+<section id="concept">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>OUR CONCEPT</small>
+
+<h2>旅には、まだ知らない楽しさがある。</h2>
+
+</div>
+
+<div class="about-grid">
+
+<div>
+
+<p>
+海輪ツーリストは、国内旅行を中心に、
+家族旅行から団体旅行まで幅広い旅をご提案しています。
+</p>
+
+<p>
+「どこへ行くか」だけではなく、
+「誰と、どんな時間を過ごすか」。
+私たちはその時間そのものを大切にしています。
+</p>
+
+<p>
+お客様一人ひとりの希望に寄り添い、
+また行きたくなる旅を一緒につくります。
+</p>
+
+</div>
+
+<div class="about-box">
+
+<h3>海輪ツーリストの約束</h3>
+
+<p>
+✓ お客様目線の旅行プラン
+</p>
+
+<p>
+✓ 安心して楽しめる旅のサポート
+</p>
+
+<p>
+✓ 地域の魅力を活かした旅
+</p>
+
+<p>
+✓ 一生の思い出になる時間
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- Services -->
+
+<section id="service" class="about">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>SERVICE</small>
+
+<h2>旅行サービス</h2>
+
+<p>
+目的に合わせた旅をご提案します。
+</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="icon">🌊</div>
+
+<h3>国内旅行</h3>
+
+<p>
+北海道から沖縄まで、
+日本各地の魅力を楽しむ旅行をご提案します。
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">👨‍👩‍👧‍👦</div>
+
+<h3>家族旅行</h3>
+
+<p>
+小さなお子様からご家族みんなで楽しめる、
+思い出づくりの旅をご提案します。
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🚌</div>
+
+<h3>団体旅行</h3>
+
+<p>
+社員旅行、親睦旅行、グループ旅行など、
+人数や目的に合わせてプランニングします。
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- News -->
+
+<section id="news">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>NEWS</small>
+
+<h2>お知らせ</h2>
+
+</div>
+
+<div class="news-list">
+
+<div class="news-item">
+<div class="news-date">2026.09.01</div>
+<div>秋のおすすめ旅行特集を公開しました。</div>
+</div>
+
+<div class="news-item">
+<div class="news-date">2026.08.20</div>
+<div>海輪ツーリスト公式ホームページを開設しました。</div>
+</div>
+
+<div class="news-item">
+<div class="news-date">2026.07.15</div>
+<div>夏季旅行商品の受付を開始しました。</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- Company -->
+
+<section id="company" class="company">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>COMPANY</small>
+
+<h2>会社概要</h2>
+
+</div>
+
+<table class="company-table">
+
+<tr>
+<th>会社名</th>
+<td>海輪ツーリスト</td>
+</tr>
+
+<tr>
+<th>代表取締役</th>
+<td>海輪 直行</td>
+</tr>
+
+<tr>
+<th>事業内容</th>
+<td>
+国内旅行・団体旅行・旅行企画・旅行手配
+</td>
+</tr>
+
+<tr>
+<th>所在地</th>
+<td>
+東京都中央区<br>
+※詳細はお問い合わせください
+</td>
+</tr>
+
+<tr>
+<th>設立</th>
+<td>2018年4月</td>
+</tr>
+
+<tr>
+<th>営業時間</th>
+<td>
+平日 9:00～18:00
+</td>
+</tr>
+
+<tr>
+<th>定休日</th>
+<td>
+土曜日・日曜日・祝日
+</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- Contact -->
+
+<section id="contact" class="contact">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>CONTACT</small>
+
+<h2>お問い合わせ</h2>
+
+</div>
+
+<div class="contact-box">
+
+<h3>旅行についてのご相談はこちら</h3>
+
+<p>
+旅行プラン、団体旅行、その他旅行に関する
+ご相談を承っています。
+</p>
+
+<a href="mailto:info@example.com" class="btn">
+お問い合わせ
+</a>
+
+<p class="contact-note">
+※こちらはサンプルサイトのため、
+実際のお問い合わせは受け付けておりません。
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="container">
+
+<div class="footer-inner">
+
+<div>
+
+<div class="footer-logo">
+海輪ツーリスト
+</div>
+
+<div class="footer-text">
+心に残る旅を、あなたに。
+</div>
+
+</div>
+
+<div class="footer-text">
+
+〒000-0000<br>
+東京都中央区<br>
+海輪ツーリスト
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+© 2026 KAIRIN TOURIST. All Rights Reserved.
+
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
